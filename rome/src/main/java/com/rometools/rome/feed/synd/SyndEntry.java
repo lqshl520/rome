@@ -79,6 +79,24 @@ public interface SyndEntry extends Cloneable, CopyFrom, Extendable {
     void setTitle(String title);
 
     /**
+     * Returns the entry thumbnail.
+     * <p>
+     *
+     * @return the entry thumbnail, <b>null</b> if none.
+     *
+     */
+    String getThumbnail();
+
+    /**
+     * Sets the entry thumbnail.
+     * <p>
+     *
+     * @param title the entry thumbnail to set, <b>null</b> if none.
+     *
+     */
+    void setThumbnail(String thumbnail);
+
+    /**
      * Returns the entry title as a text construct.
      * <p>
      *

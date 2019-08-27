@@ -119,6 +119,7 @@ public class ConverterForRSS090 implements Converter {
         syndEntry.setUri(item.getUri());
         syndEntry.setLink(item.getLink());
         syndEntry.setTitle(item.getTitle());
+        syndEntry.setThumbnail(item.getThumbnail());
         syndEntry.setLink(item.getLink());
         syndEntry.setSource(createSource(item.getSource()));
         return syndEntry;

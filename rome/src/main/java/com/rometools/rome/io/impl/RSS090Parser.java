@@ -299,6 +299,11 @@ public class RSS090Parser extends BaseWireFeedParser {
             item.setTitle(title.getText());
         }
 
+        final Element thumbnail = eItem.getChild("thumbnail", getRSSNamespace());
+        if (thumbnail != null) {
+            item.setThumbnail(thumbnail.getText());
+        }
+
         final Element link = eItem.getChild("link", getRSSNamespace());
         if (link != null) {
             item.setLink(link.getText());

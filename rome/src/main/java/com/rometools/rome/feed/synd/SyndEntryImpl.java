@@ -61,6 +61,7 @@ public class SyndEntryImpl implements Serializable, SyndEntry {
     private String comments;
     private Date updatedDate;
     private SyndContent title;
+    private SyndContent thumbnail;
     private SyndContent description;
     private List<SyndLink> links;
     private List<SyndContent> contents; // deprecated by Atom 1.0
@@ -94,6 +95,7 @@ public class SyndEntryImpl implements Serializable, SyndEntry {
 
         final Map<String, Class<?>> basePropInterfaceMap = new HashMap<String, Class<?>>();
         basePropInterfaceMap.put("title", String.class);
+        basePropInterfaceMap.put("thumbnail", String.class);
         basePropInterfaceMap.put("link", String.class);
         basePropInterfaceMap.put("uri", String.class);
         basePropInterfaceMap.put("description", SyndContent.class);
@@ -264,6 +266,35 @@ public class SyndEntryImpl implements Serializable, SyndEntry {
             this.title = new SyndContentImpl();
         }
         this.title.setValue(title);
+    }
+    /**
+     * Returns the entry thumbnail.
+     * <p>
+     *
+     * @return the entry thumbnail, <b>null</b> if none.
+     *
+     */
+    @Override
+    public String getThumbnail() {
+        if (thumbnail != null) {
+            return thumbnail.getValue();
+        }
+        return null;
+    }
+
+    /**
+     * Sets the entry thumbnail.
+     * <p>
+     *
+     * @param thumbnail the entry thumbnail to set, <b>null</b> if none.
+     *
+     */
+    @Override
+    public void setThumbnail(final String thumbnail) {
+        if (this.thumbnail == null) {
+            this.thumbnail = new SyndContentImpl();
+        }
+        this.thumbnail.setValue(thumbnail);
     }
 
     /**

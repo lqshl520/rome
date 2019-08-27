@@ -60,6 +60,7 @@ public class Item implements Cloneable, Serializable, Extendable {
     private Date expirationDate;
     private List<Module> modules;
     private List<Element> foreignMarkup;
+    private String thumbnail;//缩略图
 
     public Item() { }
 
@@ -470,4 +471,11 @@ public class Item implements Cloneable, Serializable, Extendable {
         this.foreignMarkup = foreignMarkup;
     }
 
+    public String getThumbnail() {
+        return thumbnail;
+    }
+
+    public void setThumbnail(final String thumbnail) {
+        this.thumbnail = thumbnail;
+    }
 }
